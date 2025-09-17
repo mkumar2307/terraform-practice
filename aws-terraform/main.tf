@@ -16,9 +16,18 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+
+  # hardcoding the argument values
+  # instance_type = "t2.micro"
+
+  # Use the variables from variables.tf insted of hardcoding the argument values
+  instance_type = var.instance_type
 
   tags = {
-    Name = "learn-terraform"
+    # hardcoding the argument values
+    # Name = "learn-terraform"
+
+    # Use the variables from variables.tf insted of hardcoding the argument values
+    Name = var.instance_name
   }
 }
