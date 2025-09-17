@@ -26,4 +26,4 @@ You can also define output values to expose data about the resources you create.
 
 ### Modules
 
-Modules are reusable sets of configuration. Use modules to consistently manage complex infrastructure deployments that include multiple resources and data sources. Like providers, you can source modules from the Terraform Registry. You can also create your own modules and share them within your organization.
+Modules are reusable sets of configuration. Use modules to consistently manage complex infrastructure deployments that include multiple resources and data sources. Like providers, you can source modules from the Terraform Registry. You can also create your own modules and share them within your organization. Whenever you add a new module to your configuration, you will need to install it by re-initializing the workspace.
