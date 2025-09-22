@@ -15,13 +15,15 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = data.aws_ami.ubuntu.id
+  ami = data.aws_ami.ubuntu.id
 
   # hardcoding the argument values
   # instance_type = "t2.micro"
 
   # Use the variables from variables.tf insted of hardcoding the argument values
   instance_type = var.instance_type
+
+  key_name = aws_key_pair.generated_key.key_name
 
   tags = {
     # hardcoding the argument values
