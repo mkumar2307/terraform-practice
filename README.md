@@ -1,7 +1,44 @@
 # terraform-practice
-Practice repo for Terraform related tasks
+Practice repo for Terraform related tasks      
 
-## Basic Terraform Commands:    
+### Configure AWS Credentials Locally    
+
+Create an IAM User with required permissions and download the Access Key ID and Secret Access Key.      
+Download and install the AWS CLI from the official documentation.         
+Open a terminal and run :        
+
+```bash
+aws configure
+```
+
+Enter your:        
+
+AWS Access Key ID        
+AWS Secret Access Key         
+Default region name (e.g., us-west-2)           
+Default output format (e.g., json)       
+
+This will create a credentials file at:         
+
+Linux/Mac: ~/.aws/credentials          
+Windows: %USERPROFILE%\.aws\credentials        
+
+Verify setup by running :       
+
+```bash
+aws sts get-caller-identity
+```         
+
+Alternative: Use Environment Variables           
+You can also set credentials in your terminal session:         
+
+```bash
+export AWS_ACCESS_KEY_ID="your-access-key-id"
+export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+export AWS_DEFAULT_REGION="us-west-2"
+``` 
+
+### Basic Terraform Commands:    
 
 ```bash
 terraform init      # Initialize the Terraform working directory
